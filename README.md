@@ -58,9 +58,11 @@ your_folder/
 │   ├── SubcategoryA/
 │   │   ├── image1.jpg
 │   │   ├── image2.jpg
+│   │   ├──  ... .png
 │   ├── SubcategoryB/
 │   │   ├── image3.png
 │   │   ├── image4.png
+│   │   ├──  ... .png
 ├── Category2/
 │   ├── SubcategoryC/
 │   │   ├── image5.png
