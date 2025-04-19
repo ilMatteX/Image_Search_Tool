@@ -28,6 +28,8 @@ This project is a desktop application built with **PyQt5** and **TensorFlow** (M
 
 ## 🛠️ Requirements
 
+I used Python 3.12
+
 Install dependencies via pip:
 
 ```bash
