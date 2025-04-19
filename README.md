@@ -58,9 +58,12 @@ your_folder/
 │   ├── SubcategoryA/
 │   │   ├── image1.jpg
 │   │   ├── image2.jpg
-├── Category2/
 │   ├── SubcategoryB/
 │   │   ├── image3.png
+├── Category2/
+│   ├── SubcategoryC/
+│   │   ├── image4.png
+...
 ```
 
 Categories and subcategories are inferred automatically from the folder path.
