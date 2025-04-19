@@ -28,7 +28,7 @@ This project is a desktop application built with **PyQt5** and **TensorFlow** (M
 
 ## 🛠️ Requirements
 
-I used Python 3.12
+This project was developed using Python 3.12
 
 Install dependencies via pip:
 
@@ -136,6 +136,8 @@ Categories and subcategories are inferred automatically from the folder path.
 
 ## 📄 License
 
-- This project is released under the **MIT License**.
-- Copyright (c) 2025 Mattex
-- Feel free to use, modify, and distribute — just give credit where it's due! :)
+This project is released under the **MIT License**.
+
+Copyright (c) 2025 Mattex
+
+Feel free to use, modify, and distribute — just give credit where it's due! :)
