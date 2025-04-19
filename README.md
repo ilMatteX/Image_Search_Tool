@@ -28,9 +28,9 @@ This project is a desktop application built with **PyQt5** and **TensorFlow** (M
 
 ## 🛠️ Requirements
 
-This project was developed using Python 3.12
+- This project was developed using Python 3.12
 
-Install dependencies via pip:
+- Install dependencies via pip:
 
 ```bash
 pip install numpy tensorflow scikit-learn PyQt5 tqdm
