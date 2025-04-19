@@ -128,10 +128,12 @@ Categories and subcategories are inferred automatically from the folder path.
 - [ ] Add drag & drop support for query images  
 - [ ] Export results as a report (HTML or PDF)  
 - [ ] Add multi-GPU or threading support for faster indexing  
-- [ ] Improve UI with filters (e.g., by category or score threshold)  
+- [ ] Improve UI
 
 ---
 
 ## 📄 License
 
 This project is released under the **MIT License**.
+Copyright (c) 2025 Mattex
+Feel free to use, modify, and distribute — just give credit where it's due! :)
