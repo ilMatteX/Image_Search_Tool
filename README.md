@@ -8,6 +8,10 @@ This project is a desktop application built with **PyQt5** and **TensorFlow** (M
 - 🖼️ Visually browse results with image previews, similarity percentage, and category info  
 - 📂 Open file locations directly from the interface  
 
+This tool is especially useful for:
+- Interior designers or 3D artists managing large image libraries
+- Organizing texture or asset collections
+- Finding duplicates or near-duplicate images
 ---
 
 ## 📦 Features
