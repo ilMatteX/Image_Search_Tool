@@ -60,10 +60,15 @@ your_folder/
 │   │   ├── image2.jpg
 │   ├── SubcategoryB/
 │   │   ├── image3.png
+│   │   ├── image4.png
 ├── Category2/
 │   ├── SubcategoryC/
-│   │   ├── image4.png
-...
+│   │   ├── image5.png
+│   │   ├── image6.png
+│   │   ├──  ... .png
+│   │   ├── imageN.png
+│   ├── Subcategory.../
+... (hope you get the idea)
 ```
 
 Categories and subcategories are inferred automatically from the folder path.
