@@ -34,12 +34,6 @@ Install dependencies via pip:
 pip install numpy tensorflow scikit-learn PyQt5 tqdm
 ```
 
-Optional (on Windows, for file explorer support):
-
-```bash
-pip install pywin32
-```
-
 ---
 
 ## 🚀 How to Run
