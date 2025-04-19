@@ -82,7 +82,9 @@ Categories and subcategories are inferred automatically from the folder path.
 - On each run, the app scans your chosen folder for images  
 - It compares hashes of previously saved data to check for changes  
 - New images are processed and features are saved in `index.npy`, paths in `paths.txt`  
-- Previous versions are backed up in the `backup/` folder with timestamps  
+- Previous versions are backed up in the `backup/` folder with timestamps
+
+## ⚠️ Note: The backup/ folder can grow significantly in size over time, especially if the indexed dataset is large or frequently updated. It is recommended to periodically review and clean up old backups to save disk space.
 
 ---
 
