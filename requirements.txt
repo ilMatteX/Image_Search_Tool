@@ -1,5 +1,0 @@
-numpy
-tensorflow
-scikit-learn
-PyQt5
-tqdm
