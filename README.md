@@ -65,20 +65,7 @@ Make sure to follow the instructions inside the folder you choose to run.
 
 ---
 
-## 📂 Repository Structure
-
-```
-Mattex_Image_Search_Tool/
-├── v1-MobileNet/           # Version with MobileNetV2
-├── v2-Clip-Integration/    # Version with CLIP + MobileNetV2
-├── backup/                 # Indexed file backups
-├── README.md               # This file
-└── LICENSE
-```
-
----
-
-## 🔭 Coming Soon
+## 🔭 Coming Soon(?)
 
 - Unified version with a switch between CLIP & MobileNet
 - Better GPU/multithread indexing performance
