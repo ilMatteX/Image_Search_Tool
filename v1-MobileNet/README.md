@@ -54,7 +54,7 @@ RootFolder/
 2. **Similarity Search**:
    - Load an image of your choice
    - The app compares it to the index using **cosine similarity**
-   - Top matches (up to 100) are displayed with preview and metadata
+   - Top matches (up to 1000) are displayed with preview and metadata
 
 ---
 
