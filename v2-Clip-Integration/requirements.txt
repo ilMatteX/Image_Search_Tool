@@ -1,0 +1,6 @@
+numpy
+tensorflow
+scikit-learn
+PyQt5
+tqdm
+open_clip_torch
