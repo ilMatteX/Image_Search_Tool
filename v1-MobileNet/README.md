@@ -66,6 +66,15 @@ Install required packages:
 pip install -r requirements.txt
 ```
 
+Tested with:
+```bash
+numpy==2.2.5
+tensorflow==2.19.0
+scikit-learn==1.6.1
+PyQt5==5.15.11
+tqdm==4.67.1
+```
+
 ---
 
 ## ▶️ How To Run
