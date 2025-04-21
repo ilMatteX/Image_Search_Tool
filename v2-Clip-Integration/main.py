@@ -280,7 +280,7 @@ class ResultItemWidget(QWidget):
 class ImageSearchApp(QWidget):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Image Search Tool with CLIP")
+        self.setWindowTitle("Mattex Image Search Tool")
         self.image_folder = None
         self.query_image = None
         self.init_ui()
