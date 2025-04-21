@@ -202,24 +202,62 @@ def extract_feature(image_path):
     return tf_model.predict(arr, verbose=0)[0]
 
 
-def get_similar_images(image_path, top_k):
+def get_similar_images(image_path, top_k, category=None, subcategory=None, image_folder=None):
     feats = np.load(FEATURES_FILE)
     with open(PATHS_FILE, 'r') as f:
         paths = [l.strip() for l in f]
+    # Filter by category/subcategory if provided
+    if category and category != "All" and image_folder:
+        filtered = []
+        filtered_feats = []
+        for i, p in enumerate(paths):
+            rel = os.path.relpath(p, image_folder)
+            parts = rel.split(os.sep)
+            if len(parts) >= 1 and parts[0] == category:
+                if subcategory and subcategory != "All":
+                    if len(parts) >= 2 and parts[1] == subcategory:
+                        filtered.append(p)
+                        filtered_feats.append(feats[i])
+                else:
+                    filtered.append(p)
+                    filtered_feats.append(feats[i])
+        paths = filtered
+        feats = np.array(filtered_feats)
     inp = extract_feature(image_path)
+    if len(feats) == 0:
+        return []
     sims = cosine_similarity([inp], feats)[0]
     idxs = np.argsort(sims)[::-1][:top_k]
     return [(paths[i], sims[i] * 100) for i in idxs]
 
 
-def search_with_text(query, top_k):
+def search_with_text(query, top_k, category=None, subcategory=None, image_folder=None):
     feats = np.load(CLIP_FEATURES_FILE)
     with open(CLIP_PATHS_FILE, 'r') as f:
         paths = [l.strip() for l in f]
+    # Filter by category/subcategory if provided
+    if category and category != "All" and image_folder:
+        filtered = []
+        filtered_feats = []
+        for i, p in enumerate(paths):
+            rel = os.path.relpath(p, image_folder)
+            parts = rel.split(os.sep)
+            if len(parts) >= 1 and parts[0] == category:
+                if subcategory and subcategory != "All":
+                    if len(parts) >= 2 and parts[1] == subcategory:
+                        filtered.append(p)
+                        filtered_feats.append(feats[i])
+                else:
+                    filtered.append(p)
+                    filtered_feats.append(feats[i])
+        paths = filtered
+        feats = np.array(filtered_feats)
     tokens = clip_tokenizer([query]).to(device)
     with torch.no_grad():
         t_feat = clip_model.encode_text(tokens)
         t_feat = t_feat / t_feat.norm(dim=-1, keepdim=True)
+    if len(feats) == 0:
+        return []
     sims = cosine_similarity(t_feat.cpu().numpy(), feats)[0]
     idxs = np.argsort(sims)[::-1][:top_k]
     return [(paths[i], sims[i] * 100) for i in idxs]
@@ -280,7 +318,7 @@ class ResultItemWidget(QWidget):
 class ImageSearchApp(QWidget):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Mattex Image Search Tool")
+        self.setWindowTitle("Image Search Tool with CLIP")
         self.image_folder = None
         self.query_image = None
         self.init_ui()
@@ -379,14 +417,30 @@ class ImageSearchApp(QWidget):
     def run_image_search(self):
         if not self.query_image:
             return QMessageBox.warning(self, "Error", "Select an image first.")
-        res = get_similar_images(self.query_image, top_k=self.spin.value())
+        cat = self.cmb_cat.currentText()
+        sub = self.cmb_sub.currentText()
+        res = get_similar_images(
+            self.query_image,
+            top_k=self.spin.value(),
+            category=cat,
+            subcategory=sub,
+            image_folder=self.image_folder
+        )
         self.display_results(res)
 
     def run_text_search(self):
         txt = self.txt.text().strip()
         if not txt:
             return QMessageBox.warning(self, "Error", "Enter a text query.")
-        res = search_with_text(txt, top_k=self.spin.value())
+        cat = self.cmb_cat.currentText()
+        sub = self.cmb_sub.currentText()
+        res = search_with_text(
+            txt,
+            top_k=self.spin.value(),
+            category=cat,
+            subcategory=sub,
+            image_folder=self.image_folder
+        )
         self.display_results(res)
 
     def display_results(self, results):
