@@ -43,7 +43,7 @@ v2-Clip-Integration/
 
 ## 🔧 Installation
 
-1. Create a Python environment (tested on 3.12) (or create a virtual environment with it)
+1. Create a Python environment (tested on Python 3.12) (or create a virtual environment with it)
 2. Install dependencies:
 
 ```bash
