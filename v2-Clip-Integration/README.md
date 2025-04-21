@@ -50,7 +50,7 @@ v2-Clip-Integration/
 pip install -r requirements.txt
 ```
 
-TESTED WITH:
+Tested with:
 ```bash
 numpy==2.2.5
 tensorflow==2.19.0
