@@ -43,13 +43,22 @@ v2-Clip-Integration/
 
 ## 🔧 Installation
 
-1. Create a Python environment (tested on 3.12)
+1. Create a Python environment (tested on 3.12) (or create a virtual environment with it)
 2. Install dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
+TESTED WITH:
+```bash
+numpy==2.2.5
+tensorflow==2.19.0
+scikit-learn==1.6.1
+PyQt5==5.15.11
+tqdm==4.67.1
+open_clip_torch==2.32.0
+```
 ---
 
 ## 📖 Workflow
