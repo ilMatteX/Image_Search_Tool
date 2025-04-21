@@ -1,6 +1,6 @@
 # 🔹 Mattex Image Search — CLIP Integrated Version
 
-The advanced version of Mattex Image Search Tool, integrating **OpenAI CLIP** with **MobileNetV2** for **both visual and text-based** image retrieval.
+This version integrates **OpenAI CLIP** with **MobileNetV2** for **both visual and text-based** image retrieval.
 
 ---
 
@@ -30,7 +30,7 @@ The advanced version of Mattex Image Search Tool, integrating **OpenAI CLIP** wi
 
 ```
 v2-Clip-Integration/
-├── Clipv2main.py        # Main script with combined CLIP & MobileNet logic
+├── main.py        # Main script with combined CLIP & MobileNet logic
 ├── index.npy            # (auto) MobileNet feature vectors
 ├── paths.txt            # (auto) MobileNet image paths
 ├── clip_index.npy       # (auto) CLIP feature vectors
@@ -43,23 +43,11 @@ v2-Clip-Integration/
 
 ## 🔧 Installation
 
-1. Create a Python 3.8+ environment (recommended: `venv` or `conda`).
+1. Create a Python environment (tested on 3.12)
 2. Install dependencies:
 
 ```bash
 pip install -r requirements.txt
-```
-
-**requirements.txt** should include:
-```
-torch
-open-clip-torch
-tensorflow
-numpy
-scikit-learn
-tqdm
-PyQt5
-Pillow
 ```
 
 ---
